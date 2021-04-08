@@ -39,7 +39,6 @@ print("website 1 completed")
 print("total elements:",len(urls))
 
 
-
 ##website 2
 driver.get("https://economictimes.indiatimes.com/news/economy/agriculture")
 try:

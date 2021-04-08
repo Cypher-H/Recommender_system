@@ -153,10 +153,10 @@ driver.close()
 
 with open('dataset.csv', 'a', newline='') as file:
 	writer = csv.writer(file)
-	writer.writerow(["title", "date of publish" , "url", "content", "tags"])
+	writer.writerow(["id", "title", "date of publish" , "url", "content", "tags"])
 	for j in range(0 , len(titles)):
 		try:
-			writer.writerow([titles[j], dates[j], urls[j], contents[j], tags[j]])
+			writer.writerow([j,titles[j], dates[j], urls[j], contents[j], tags[j]])
 		except:
 			continue
 		print("details updated on csv.....")

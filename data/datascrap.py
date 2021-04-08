@@ -1,6 +1,4 @@
 from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.common.keys import Keys
 import csv
 import time
 
@@ -151,3 +149,14 @@ print("dates:",len(dates))
 print("tags:",len(tags))
 print("contents:",len(contents))
 driver.close()
+
+
+with open('dataset.csv', 'a', newline='') as file:
+	writer = csv.writer(file)
+	writer.writerow(["title", "date of publish" , "url", "content", "tags"])
+	for j in range(0 , len(titles)):
+		try:
+			writer.writerow([titles[j], dates[j], urls[j], contents[j], tags[j]])
+		except:
+			continue
+		print("details updated on csv.....")
